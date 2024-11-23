@@ -1,0 +1,9 @@
+#Executables
+*.exe
+
+#ObjectFiles
+*.o
+
+#Folders
+
+#Other
