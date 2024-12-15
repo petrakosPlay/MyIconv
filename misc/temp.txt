@@ -1,0 +1,95 @@
+============================================================================================================
+?1
+
+0x04
+U+009C 
+0xC2, 0x9C
+
+In the context of EBCDIC, SEL (Select) is a control character, typically used for device or  system-specific
+operations. It  does not  represent a  printable character  and is  reserved for  internal or protocol-based
+communication, such as selecting a device or signaling a specific action.
+
+SEL in Modern Contexts
+
+When  converting  EBCDIC  to  Unicode,  SEL  does   not  have  a  direct  equivalent,  as  its   meaning  is
+context-dependent. If required for interoperability,  it may be mapped to  a private-use area in Unicode  or
+simply ignored, depending on the application.
+
+
+
+
+============================================================================================================
+?2
+
+0x06 
+U+0086
+0xC2, 0x86
+
+
+In the context of EBCDIC CCSID  875, RNL stands for Required New  Line. It is typically a control  character
+used in printing or formatting to indicate the need for starting a new line.
+
+In Unicode, RNL (Required New  Line) does not have a  direct equivalent code point because  Unicode does not
+define a specific character for RNL. Instead, Unicode provides general newline-related characters, such as:
+
+U+000A (LF - Line Feed): Typically used for line breaks.
+
+U+000D (CR - Carriage Return): Often combined with LF in CRLF sequences.
+
+U+0085 (NEL - Next Line): Used as a newline character in some EBCDIC systems and environments.
+
+Since RNL is specific to EBCDIC and certain  legacy systems, its behavior can be approximated in  Unicode by
+U+0085 (NEL), which  is often used  to represent similar  concepts when converting  from EBCDIC to  Unicode.
+However, the exact mapping might vary depending on the context and the system performing the conversion. 
+
+
+0x08	U+0097							(GE)
+0x09	U+008D	#CONTROL
+0x0A	U+008E	#CONTROL
+0x0B	U+000B	#VERTICAL TABULATION
+0x0C	U+000C	#FORM FEED
+0x0D	U+000D	#CARRIAGE RETURN
+0x0E	U+000E	#SHIFT OUT
+0x0F	U+000F	#SHIFT IN
+0x10	U+0010	#DATA LINK ESCAPE
+0x11	U+0011	#DEVICE CONTROL ONE
+0x12	U+0012	#DEVICE CONTROL TWO
+0x13	U+0013	#DEVICE CONTROL THREE
+0x14	U+009D	#CONTROL
+
+
+0x17	U+0087	#CONTROL
+0x18	U+0018	#CANCEL
+0x19	U+0019	#END OF MEDIUM
+0x1A	U+0092	#CONTROL
+0x1B	U+008F	#CONTROL
+0x1C	U+001C	#FILE SEPARATOR
+0x1D	U+001D	#GROUP SEPARATOR
+0x1E	U+001E	#RECORD SEPARATOR
+0x1F	U+001F	#UNIT SEPARATOR
+0x20	U+0080	#CONTROL
+0x21	U+0081	#CONTROL
+0x22	U+0082	#CONTROL
+0x23	U+0083	#CONTROL
+0x24	U+0084	#CONTROL
+
+0x28	U+0088	#CONTROL
+0x29	U+0089	#CONTROL
+0x2A	U+008A	#CONTROL
+0x2B	U+008B	#CONTROL
+0x2C	U+008C	#CONTROL
+
+0x30	U+0090						CONTROL
+0x31	U+0091						CONTROL
+
+
+0x33	U+0093						CONTROL
+0x34	U+0094						CONTROL
+0x35	U+0095						CONTROL
+0x36	U+0096						CONTROL
+
+
+0x38	U+0098						CONTROL
+0x39	U+0099						CONTROL
+0x3A	U+009A						CONTROL
+0x3B	U+009B						CONTROL
