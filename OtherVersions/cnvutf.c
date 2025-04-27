@@ -8,13 +8,21 @@
 #include <string.h>
 #include <stdlib.h>
 #include <errno.h>
+#include <unistd.h>
+#include <sys/time.h>
+
+double get_time_in_seconds() {
+    struct timeval time;
+    gettimeofday(&time, NULL);
+    return time.tv_sec + (time.tv_usec / 1e6);
+}
 
 
 int main(int argc, char **argv)
 {
     int inputFile, outputFile, i, j, bytesRead, bytesWritten, bytesToWrite;
     char *inputFilePath, *outputFilePath;
-    unsigned char inputChar, outputChar;
+    unsigned char inputChar;
     unsigned char inputCharBuf[16384], outputCharBuf[32768];
     bytesRead = bytesWritten = 0;
     inputFilePath = outputFilePath = NULL;
@@ -26,6 +34,9 @@ int main(int argc, char **argv)
     memset(outputFilePath, '\0', n2+1);
     strncpy(inputFilePath,  *(argv+1), n1);
     strncpy(outputFilePath, *(argv+2), n2);
+	
+double start, end;
+start = get_time_in_seconds();
 
     if( (inputFile  = open(inputFilePath, O_RDONLY)) == -1)   return -1;
     if( (outputFile = open(outputFilePath, O_WRONLY | O_CREAT | O_TRUNC, 0666))
@@ -889,5 +900,9 @@ int main(int argc, char **argv)
     }
     close(inputFile);
     close(outputFile);
+	
+	end = get_time_in_seconds();
+	printf("Time for write(): %.6f seconds\n", end - start);
+
     return 0;
 }
