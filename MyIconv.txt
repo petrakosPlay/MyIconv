@@ -1,0 +1,8 @@
+iconv --from-code=IBM875 --to-code=UTF-8 MB_10 --output=utf.txt
+
+for i in $(seq 1 10); do ./conv GB_1 utf.txt B; sleep 5; done
+for i in $(seq 1 10); do ./old_conv GB_1 utf.txt ; done
+./conv GB_1 utf.txt B
+./old_conv GB_1 utf.txt
+gcc ./misc/cnvutf.c -o old_conv -Wall
+gcc conv_EBCDIC875_UTF8.c -o conv -Wall
